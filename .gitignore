@@ -1,0 +1,9 @@
+# Exclude sub-projects with their own repos
+PET_CARE_APP_PLAN/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Claude
+.claude/
