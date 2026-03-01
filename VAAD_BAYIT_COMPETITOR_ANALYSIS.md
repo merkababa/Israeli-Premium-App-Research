@@ -7,422 +7,416 @@
 ## Table of Contents
 
 - [Market Context](#market-context)
-- [Competitor Deep-Dive](#competitor-deep-dive)
-  - [Bllink](#bllink)
-  - [Hombi](#hombi)
-  - [DARIMPO](#darimpo)
-  - [Gaviah Plus](#gaviah-plus)
-  - [Visitt](#visitt)
-  - [Additional Competitors](#additional-competitors)
+- [Competitive Landscape Summary](#competitive-landscape-summary)
+- [Tier 1: Real Threats](#tier-1-real-threats)
+- [Tier 2: Active but Different Segment](#tier-2-active-but-different-segment)
+- [Tier 3: Active but Small/Niche](#tier-3-active-but-small-niche)
+- [Tier 4: Dead / Dying / Irrelevant](#tier-4-dead-dying-irrelevant)
+- [Free Competitors Deep Analysis](#free-competitors-deep-analysis)
+- [Why 90%+ Buildings Still Use WhatsApp](#why-90-buildings-still-use-whatsapp)
 - [Gaps and Opportunities](#gaps-and-opportunities)
-- [Customer Acquisition Channels](#customer-acquisition-channels)
-- [Pricing Analysis](#pricing-analysis)
-- [Executive Summary](#executive-summary)
+- [Pricing Landscape](#pricing-landscape)
+- [Our Positioning](#our-positioning)
+- [Sources](#sources)
 
 ---
 
 ## Market Context
 
-### Total Addressable Market
-
 - **3.02 million residential apartments** in Israel as of mid-2025 ([BuyItInIsrael](https://www.buyitinisrael.com/news/israel-housing-supply-tops-3-million-as-gaps-widen))
 - Any building with 2+ apartments is legally a "bayit meshutaf" requiring a vaad bayit ([Ronkin-List](https://ronkin-list.com/vaad-bayit-israel-guide/))
-- Monthly vaad bayit fees range from NIS 80 (basic walk-ups) to NIS 3,000+ (luxury towers) ([BuyItInIsrael](https://www.buyitinisrael.com/news/vaad-bayit-building-maintenance-management-israel/))
-- Estimated 150,000-250,000 residential buildings nationwide requiring vaad bayit management
-- Target segment: 8-40 unit buildings (the majority of Israeli residential buildings)
+- Estimated **150,000-250,000 residential buildings** requiring vaad bayit management
+- Monthly vaad bayit fees range from NIS 80 to NIS 3,000+ ([BuyItInIsrael](https://www.buyitinisrael.com/news/vaad-bayit-building-maintenance-management-israel/))
+- **90%+ of buildings still manage via WhatsApp + Excel + paper** — even the market leader has ~5% penetration
+- The market is bifurcated: Professional management companies (served by Build-App, DARIMPO, OXS) vs. Volunteer vaad bayit committees (served by Bllink, Ding, Hombi)
 
 ---
 
-## Competitor Deep-Dive
+## Competitive Landscape Summary
 
-### Competitor Landscape Overview
-
-| Company | Focus | Funding | Users/Buildings | Pricing Model |
-|---------|-------|---------|----------------|---------------|
-| **Bllink** | Payments | $1.2-1.6M seed | 65K+ apartments | Transaction commission |
-| **Hombi** | Community app | None | 73K downloads | Free |
-| **DARIMPO** | Enterprise PM | None | ~100 companies | B2B subscription |
-| **Gaviah Plus** | Billing | None | 1,000+ orgs | NIS 95/mo + fees |
-| **Visitt** | Commercial RE | $22M Series B | 150+ customers | Enterprise SaaS |
-| **Build-App** | Enterprise PM | Unknown | Many mgmt cos | B2B enterprise |
-| **Dayarim** | Vaad bayit | Unknown | Hundreds | Unknown |
-| **Shchenim** | Basic mgmt | Unknown | Hundreds | Free |
-| **Homenet** | Basic mgmt | Unknown | Unknown | Free |
-| **RunMaxi** | AI-powered PM | Bank-backed | Tens of thousands | B2B |
-| **Vaad Plus** | TBD | Unknown | Pre-launch | TBD |
+| Competitor | Status | Target | Verified Adoption | Monthly Cost (20-unit bldg) | Threat |
+|-----------|--------|--------|-------------------|---------------------------|--------|
+| **Bllink** | Growing | Volunteer vaad bayit | 25K apts (2021), 150K claimed | ~NIS 80-240 (commission) | **HIGH** |
+| **Ding** (NEW) | Just launched | Volunteer vaad bayit | Dozens (pilot) | **NIS 200** (10/apt) | **HIGH** |
+| **DARIMPO** | Established | Professional mgmt cos | ~100 companies | NIS 200-500+ | Medium |
+| **Build-App** | Market leader | Professional mgmt cos | 20+ enterprise clients | NIS 200-500+ | Medium |
+| **OXS** | Established | Professional mgmt cos | Unknown | SaaS | Medium |
+| **Livy** | Active | Mixed | Unknown | Unknown | Low-Med |
+| **Gaviah Plus** | Niche | Haredi institutions | <1,000 vaad bayit | NIS 111 (95+VAT) | Low |
+| **Dayarim** | Small indie | Volunteer vaad bayit | "Hundreds" | Unknown | Low |
+| **Hombi** | Declining | Community | 73K downloads, 540/mo | Free | Low |
+| **Homenet** | Hobby project | Volunteer vaad bayit | Unknown (tiny) | Free | Low |
+| **Shchenim** | Zombie | Mixed | Unknown (tiny) | Free | Low |
+| **Tarbut HaDiur** | Declining | Members only | ~1,600 users | Membership fee | Very Low |
+| **RunMaxi** | Failed/Pivoted | Physical mgmt | 30 buildings | Service fee | None |
+| **Neighbor** | Dead (2019) | — | — | — | None |
+| **Vaad Plus** | Never launched | — | — | — | None |
 
 ---
 
-### Bllink
+## Tier 1: Real Threats
 
-**Website:** [bllink.co](https://www.bllink.co/en/)
+### Bllink — The Current Market Leader
+
+**Website:** [bllink.co](https://www.bllink.co/en/) | **Status: GROWING**
 
 | Attribute | Detail |
 |-----------|--------|
-| **Founded** | 2017 (Tel Aviv); originally named "PtoP", rebranded to Bllink |
-| **Founders** | Omri Peled (CEO) |
-| **Funding** | $1.2M seed round (July 2021), led by Wix founders/executives (Avishai Abrahami, Nir Zohar, Giora Kaplan, Lior Shemesh, Eyal Veitzman), Flashpoint Venture Capital, Altair. Some sources report total of $1.6M. |
-| **Team Size** | ~24 employees ([PitchBook](https://pitchbook.com/profiles/company/432814-60)) |
-| **Revenue Model** | Transaction-based: small commission fee based on platform usage / portfolio size. NOT subscription. |
-| **Metrics** | 65,000+ apartments managed, 72 cities, $10M+ annual payment volume, 97% tenant satisfaction. Triple-digit growth since 2019. |
-| **Technology** | Modern web/mobile platform. Accepts credit cards, bank transfers, Bit, Apple Pay. |
+| **Founded** | 2017 (Tel Aviv); originally "PtoP", rebranded to Bllink |
+| **Founder** | Omri Peled (CEO) |
+| **Funding** | $1.6M seed (July 2021) — Wix founders (Avishai Abrahami, Giora Kaplan, Nir Zohar), Flashpoint VC, Altair |
+| **Team** | ~17-24 employees |
+| **Verified adoption (2021)** | 25K+ apartments, $10M+/year payment volume, triple-digit growth |
+| **Claimed adoption (2025)** | 150K+ housing units, 72 cities, 97% satisfaction (UNVERIFIED — only on their website) |
+| **Revenue model** | Commission on payments (estimated 1.5-3% per transaction). Software is free. |
+| **Apps** | Google Play + App Store (both active) |
+| **Tech** | Modern web/mobile. Accepts CC, bank transfers, Bit, Apple Pay. |
 
-**Key Features:**
-- Digital payment collection (credit card, bank authorization, Bit, Apple Pay)
-- Vendor payment management from single platform
-- Dashboard with financial overview per building
-- Automatic payment reminders for unpaid apartments
-- Recurring payments with automatic receipts
-- Bank account reconciliation
+**Features:** Digital payment collection, vendor payment management, financial dashboard, automatic payment reminders, recurring payments with receipts, bank reconciliation.
 
 **Strengths:**
-- Payment-focused with strong fintech angle
-- Backed by Wix founding team (strong product/growth DNA)
+- Payments-focused fintech with Wix founder backing
+- Best adoption numbers in the market (~5% of Israeli housing stock if 150K claim is real)
+- Free for buildings (revenue from commissions) — removes adoption barrier
 - Fast onboarding ("start accepting payments in minutes")
-- Proven traction with 65K+ apartments
-- Eliminates checks/cash for buildings
 
 **Weaknesses:**
-- Narrow focus on financial management; lacks community/communication features
-- No voting, messaging, or professional directory
-- Limited maintenance/work order capabilities
-- Commission-based pricing may face resistance from cost-conscious vaad bayit committees
-- No apparent AI or smart features
+- **Payments only** — no community features, no voting, no maintenance management
+- No Series A raised in 4 years (either profitably bootstrapping or couldn't raise)
+- Commission model means buildings pay more as they process more payments
+- From [Midrag review](https://www.midrag.co.il/Expanel/Question/2448): maintenance features "still in process of improvement"
 
-**Sources:** [Flashpoint VC](https://www.flashpointvc.com/post/bllink-property-management-platform-closes-a-us1-2-million-seed-round-to-support-its-growth-and-expansion), [Calcalist](https://www.calcalistech.com/ctech/articles/0,7340,L-3911934,00.html), [Startup Nation Central](https://finder.startupnationcentral.org/company_page/bllink)
+**No verified follow-on funding found.** The 150K apartments claim appears only on their own website — no third-party confirmation.
 
 ---
 
-### Hombi
+### Ding — The Dangerous New Entrant
 
-**Website:** [hombi.co](https://hombi.co/)
+**Website:** [ding.co.il](https://www.ding.co.il/) | **Status: JUST LAUNCHED (~2024)**
 
 | Attribute | Detail |
 |-----------|--------|
-| **Founded** | 2015 |
-| **Founders** | Oron Ben-David and Ovad Tzion (Tzion now COO at DealHub — may have moved on) |
-| **Funding** | No known funding rounds ([Tracxn](https://tracxn.com/d/companies/hombi/__5twNDK5CgMPj3IPqNYPymXd26Z1mCwssZL4AYn8JJcw)) |
-| **Team Size** | Small bootstrapped team |
-| **Revenue Model** | FREE app. Revenue unclear — likely monetizes through payment processing fees |
-| **Metrics** | 73,000 total downloads (Google Play); **18 downloads/day** in last 30 days (declining). 470 ratings. |
-| **App Ratings** | Google Play: 4.80/5 (470 ratings); iOS: 4.3/5 (6 ratings) |
-| **Technology** | Built with **Ionic Framework** (hybrid mobile app); Backend appears to use Parse/Back4App. Last updated August 2025. |
+| **Parent company** | OXS Fintech Ltd, subsidiary of **Bar-Oz Insurance Center** (decades of building insurance experience) |
+| **Backed by** | Bar-Oz Insurance's existing distribution network |
+| **Licensed** | Financial services license #68596 from Capital Market Authority |
+| **Adoption** | Completed pilot with "dozens of buildings," now open nationally |
+| **Pricing** | **NIS 10/apartment/month** (published, transparent) |
+| **Discounts** | Bar-Oz insurance clients: 3 free months + 50% off first 2 years |
+| **Sibling product** | OXS ([oxs.co.il](https://www.oxs.co.il/)) — B2B management software for professional companies |
 
-**Key Features:**
-- Internal messaging between residents and vaad
-- Voting and surveys for building decisions
-- Professional directory (vetted contractors)
-- Problem/fault reporting with photos
-- Financial reports accessible to all residents
-- Credit card payment for vaad fees
-- Task management and maintenance reminders
+**Features:** Digital wallet, automated billing, virtual assemblies with legally binding decisions, document repository, WhatsApp/SMS/email/chat communication.
 
-**Strengths:**
-- Most feature-complete consumer-facing app
-- Free pricing removes adoption barrier
-- Good app store ratings (4.8 on Android)
-- Community-oriented (messaging, voting, professionals)
+**Why Ding is dangerous:**
+1. **Built-in distribution** — Bar-Oz Insurance already serves hundreds of building committees. Ding can be sold to existing clients with zero cold outreach.
+2. **Regulatory compliance** — licensed financial services provider
+3. **Clear published pricing** — NIS 10/apt/month is easy to understand
+4. **Experienced parent company** — decades in building committee space
+5. **Both B2B (OXS) and B2C (Ding)** — covers both market segments
 
 **Weaknesses:**
-- **Extremely weak engagement**: 18 downloads/day, declining
-- Co-founder appears to have moved on
-- Built on aging Ionic/Parse stack — technical debt risk
-- No known funding means limited resources for growth
-- iOS version has only 6 ratings
-- Unclear monetization / revenue sustainability
-
-**Sources:** [AppBrain](https://www.appbrain.com/app/hombi/com.ionicframework.vaadapp212468), [App Store](https://apps.apple.com/us/app/%D7%94%D7%95%D7%9E%D7%91%D7%99-hombi/id1071129259)
+- NIS 10/apt = **NIS 200/month for a 20-unit building** — expensive for small buildings
+- Per-apartment pricing creates sticker shock for larger buildings (40 units = NIS 400/month)
+- Just launched — product maturity unknown
+- Tied to insurance parent — may be seen as an insurance upsell tool
 
 ---
+
+## Tier 2: Active but Different Segment (Professional Management Companies)
 
 ### DARIMPO
 
-**Website:** [darimpo.com](https://www.darimpo.com/)
+**Website:** [darimpo.com](https://www.darimpo.com/) | **Status: Established**
 
 | Attribute | Detail |
 |-----------|--------|
-| **Founded** | ~2014 |
-| **Funding** | No publicly disclosed funding rounds |
-| **Team Size** | 1-10 employees ([ZoomInfo](https://www.zoominfo.com/c/darimpo/462255173)) |
-| **Revenue Model** | B2B SaaS targeting property management companies |
-| **Metrics** | Serves "approximately 100 companies" |
-| **App Ratings** | Mixed reviews on Google Play. Some 1-star reviews citing poor UX. |
-| **Technology** | WordPress/Elementor website; proprietary platform with mobile apps. Claims AI Virtual Assistant. |
+| **Company** | DARIMPO Israel Ltd (company #515351252) |
+| **Team** | 1-10 employees |
+| **Clients** | ~100 management companies |
+| **Pricing** | Not public. Known to be "very expensive" ([Midrag](https://www.midrag.co.il/Expanel/Question/2448)) |
+| **Apps** | 3 separate apps: residents, management companies, field workers |
+| **AI** | Virtual Assistant for automated tasks (claims 20% automation) |
 
-**Key Features:**
-- Maintenance request management (chat-based interface)
-- Fault reporting with photos
-- Three separate apps: residents, management companies, field workers
-- AI-powered Virtual Assistant
-- Planned and reactive maintenance workflow
-- Communication between residents, property managers, and contractors
-- Financial management (credit card, Bit payments)
+**Strengths:** Enterprise-grade, three-app ecosystem, active development. **Weaknesses:** Very small team, only ~100 clients after 10+ years, mixed app reviews (photo upload bugs, editing limitations), expensive.
 
-**Strengths:**
-- Enterprise/B2B focus on management companies
-- Three-app ecosystem covering all stakeholders
-- AI Virtual Assistant differentiator
-- Active development (updates as recent as Feb 2025)
+### Build-App (A Point Systems)
 
-**Weaknesses:**
-- Very small team (1-10) limits scalability
-- Mixed app reviews — complaints about photo upload bugs, editing limitations
-- Serves only ~100 companies after 10+ years, suggesting slow growth
-- No public pricing transparency
-- Website built on WordPress/Elementor
+**Website:** [build-app.co.il](https://www.build-app.co.il/) | **Status: Market leader for management companies**
 
-**Sources:** [Crunchbase](https://www.crunchbase.com/organization/darimpo), [ZoomInfo](https://www.zoominfo.com/c/darimpo/462255173), [F6S](https://www.f6s.com/company/darimpoltd)
+| Attribute | Detail |
+|-----------|--------|
+| **Company** | A Point Systems (איי פוינט מערכות), Petah Tikva |
+| **Clients** | 20+ named management companies (including Danya Holdings) |
+| **Self-described** | "The most popular system for maintenance companies in Israel" |
+| **Pricing** | Not public. Estimated NIS 200-500+/month |
+
+**Strengths:** Mature, battle-tested, comprehensive BI dashboards. **Weaknesses:** Purely B2B, no consumer presence, no volunteer vaad bayit offering.
+
+### OXS
+
+**Website:** [oxs.co.il](https://www.oxs.co.il/) | Same parent as Ding (Bar-Oz). B2B management software for professional companies.
 
 ---
 
+## Tier 3: Active but Small/Niche
+
 ### Gaviah Plus
 
-**Website:** [vaadbait.net](https://vaadbait.net/)
+**Website:** [vaadbait.net](https://vaadbait.net/) | **Status: Active, niche (Haredi communities)**
 
 | Attribute | Detail |
 |-----------|--------|
 | **Founded** | 2019 |
-| **Funding** | No known funding |
-| **Revenue Model** | **NIS 95/month + VAT per building** + 1% credit card processing fee + NIS 1 per bank charge |
-| **Metrics** | Claims to serve 1,000+ organizations (including nonprofits) |
-| **Technology** | Web-based platform with WhatsApp/email integration |
+| **Claims** | 1,000+ organizations |
+| **Reality** | <1,000 vaad bayit — number inflated by synagogues and nonprofits via sister product "Ndarim Plus" |
+| **Pricing** | ~NIS 95/month + VAT + 1% CC fee + NIS 1/bank charge |
+| **Contact** | Gmail address (a025846535@gmail.com) — signals very small operation |
+| **Hours** | Sun-Thu 9AM-3PM only |
 
-**Key Features:**
-- Credit card and Bit payment processing
-- Standing order setup for recurring payments
-- Income/expense tracking with balance management
-- Automated supplier payments
-- WhatsApp and email alerts to delinquent residents
-- Automated attorney warning letters for non-payers
-- Voice call reminders to non-paying residents
-- Digital receipts and payment confirmations
+**No mobile app.** Web-only. Focused on billing/collection, no community features, no maintenance. Primarily serves religious institutions. Small operation.
 
-**Strengths:**
-- **Most transparent and affordable pricing**: NIS 95/month
-- Strong collection/enforcement tools (attorney letters, voice calls)
-- Dual market serving both vaad bayit and nonprofits
-- WhatsApp integration
-- 1,000+ organization base
+### Dayarim
 
-**Weaknesses:**
-- No mobile app (web-only)
-- No community features (messaging, voting)
-- No maintenance management
-- Focused purely on billing/collection
-- Website and brand feel dated
-- Support hours limited (Sun-Thu 9AM-3PM)
-
----
-
-### Visitt
-
-**Website:** [visitt.io](https://visitt.io)
+**Website:** [dayarim.co.il](https://www.dayarim.co.il/) | **Status: Small indie**
 
 | Attribute | Detail |
 |-----------|--------|
-| **Founded** | 2017 (Tel Aviv / New York) |
-| **Founders** | Itay Oren (CEO), Idan Wender (CTO), Jonathan Kroll (CPO) |
-| **Funding** | **$22M Series B** (Jan 2026). Total funding likely $30M+. |
-| **Revenue Model** | Enterprise SaaS for **commercial** real estate |
-| **Metrics** | 150+ customers, 900% growth in managed square footage in 2025 |
+| **Company** | DAYARIM ONLINE LTD, registered in Gibton |
+| **Operating** | 7+ years |
+| **Claims** | "Hundreds" of building committees |
+| **Contact** | Mobile phone number as primary contact — 1-2 person operation |
+| **App** | Google Play (last updated Oct 2024) |
 
-**Relevance to Vaad Bayit: LOW.** Visitt is focused exclusively on commercial real estate (CRE) — office buildings, malls, commercial complexes. It does NOT serve residential vaad bayit. However, it demonstrates that Israeli PropTech can attract significant funding.
+Legitimate but very small lifestyle business. No signs of growth ambition.
 
-**Sources:** [PR Newswire](https://www.prnewswire.com/news-releases/visitt-raises-22-million-series-b-funding-to-build-the-single-ai-interface-for-cre-property-operations-302669385.html)
+### Livy
+
+**Website:** [livy.co.il](https://www.livy.co.il/) | **Status: Active, unknown traction**
+
+Cloud-based platform with payments, voting, maintenance, financial management. Clean modern design. App Store listing from 2021. No adoption data available.
 
 ---
 
-### Additional Competitors
+## Tier 4: Dead / Dying / Irrelevant
 
-#### Build-App ([build-app.co.il](https://www.build-app.co.il/))
-- **Enterprise-grade** platform targeting management companies
-- Features: service call management, maintenance, collection, BI reports, supplier management
-- Separate apps for maintenance staff, residents, and suppliers
-- Significant market penetration among management companies
-- No public pricing; likely NIS 200-500+/month
+### Hombi — Slowly Dying
 
-#### Dayarim ([dayarim.co.il](https://www.dayarim.co.il/))
-- 7+ years in operation, serves hundreds of vaad bayit committees
-- Features: collection tracking, expenses, banking, automated receipts, email/SMS notifications
-- Custom branded portals for management companies
+| Attribute | Detail |
+|-----------|--------|
+| **Founded** | 2015 |
+| **Downloads** | 73,000 total / **540/month** currently (declining) |
+| **Ratings** | 4.8/5 (470 ratings) Android, 4.5/5 (77 ratings) iOS |
+| **Co-founders** | **Both left.** CEO Ovad Tzion is now COO at DealHub.io (unrelated B2B company). |
+| **Tech** | Ionic hybrid framework (2015-era), version 1.0.7 after 10 years |
+| **Revenue model** | Free. No visible monetization. |
 
-#### Shchenim ([shchenim.co.il](https://shchenim.co.il/page/software))
-- **Completely free** platform
-- Serves hundreds of building committees and management companies
-- Features: collection management, automated receipts, credit card payments, financial reporting, document cloud storage
-- Regulatory compliance built in
+Best of the free apps on paper — but both founders left, engagement is declining, tech stack is a decade old, and v1.0.7 after 10 years means near-zero development. This is a product in graceful decline.
 
-#### Homenet ([homenet.org.il](https://www.homenet.org.il/))
-- Free vaad bayit management system
-- Credit card payments, expense/income recording, tenant participation
-- Listed on [Startup Nation Central](https://finder.startupnationcentral.org/company_page/homenet-payments-ltd)
+### Shchenim — Zombie
 
-#### RunMaxi
-- Founded 2014 (Ramat Gan), AI-powered
-- "Maxi" personal assistant on WhatsApp, Facebook, Google Home, Siri, Alexa
-- Backed by **Bank HaPoalim, Bank Leumi, and Israel Innovation Authority**
-- Claims 30-50% cost savings, serves tens of thousands of tenants
+**Credit card processing discontinued in January 2020.** The core value proposition (pay vaad fees by CC) has been dead for 6+ years. Website still live but nobody maintains it. No mobile app. No users disclosed. Zero reviews online. Web-only with 2015-era UI. **Effectively dead.**
 
-#### Vaad Plus ([vaadplus.com](https://www.vaadplus.com/))
-- **Pre-launch** as of March 2026 ("Launching Soon") — unknown capabilities
+### Homenet — Hobby Project
 
-#### Tarbut HaDiur ([tarbut-hadiur.gov.il](https://www.tarbut-hadiur.gov.il/content/223))
-- Government-affiliated, provides subsidized computer program for vaad bayit management
-- Limited to ~1,600 users, basic features
+One-man project by Menny Shahar (Kfar Saba). Zero funding. Built on Bootstrap 3 (2013 technology). No mobile app. Articles section broken. Added an AI chat agent in April 2025 — only sign of activity. No reviews found anywhere. Zero traction evidence.
+
+### Tarbut HaDiur Software — Replacing Itself
+
+Government-affiliated Housing Culture Association. Published an **RFI in 2025 to replace their own software** — meaning even they know it's inadequate. Web-only, members-only, dated UI. ~1,600 users. Declining.
+
+### RunMaxi — The Cautionary Tale
+
+**Despite bank backing (HaPoalim + Leumi), Innovation Authority funding, and AI/WhatsApp bot technology — RunMaxi FAILED.**
+- Absorbed Neighbor in October 2019
+- Pivoted from tech platform to physical property management company
+- runmaxi.co.il now **redirects to PMC.im** (a directory listing)
+- Now manages just **30 buildings** as a family-run business (CEO Moshe Zada, Customer Service Manager Zion Zada)
+- Facebook rating: 3.2/5
+
+**Lesson: The vaad bayit market is resistant to top-down technology imposition. Adoption happens bottom-up, one building at a time, through word-of-mouth.**
+
+### Neighbor — Dead Since 2019
+
+Officially shut down October 10, 2019 with message "It's not the end, it's a new beginning." Customers migrated to RunMaxi (which itself then failed). neighbor.co.il returns ECONNREFUSED.
+
+### Vaad Plus — Vaporware
+
+[vaadplus.com](https://www.vaadplus.com/) is still a GoDaddy placeholder page with "Launching Soon" message. No product, no team, no features. Has been "launching soon" for an indeterminate period.
+
+---
+
+## Free Competitors Deep Analysis
+
+### Why the Free Apps Failed
+
+All three free platforms (Shchenim, Homenet, Hombi) launched around 2015, offer reasonable features on paper, and have **all failed to achieve meaningful adoption** despite being free.
+
+| Factor | Shchenim | Homenet | Hombi |
+|--------|----------|---------|-------|
+| **Status** | Zombie/Dead | Hobby project | Slowly declining |
+| **Mobile App** | No | No | Yes (Ionic hybrid) |
+| **UI Quality** | Dated (2015-era) | Severely dated (Bootstrap 3) | Moderate |
+| **Revenue Model** | Broken/None | None | None visible |
+| **Funding** | None | Zero | None |
+| **Team** | Unknown | Solo founder | Both co-founders left |
+| **Active Development** | No evidence | No evidence | Minimal (v1.0.7 in 10 years) |
+| **Technology** | Legacy web | Bootstrap 3 (2013) | Ionic hybrid (2015) |
+
+**Combined user base of all three: probably fewer than 2,000 active buildings** — out of 150,000-250,000.
+
+### The Free Apps Are Not Real Competition
+
+They are **decade-old abandoned projects**:
+- Shchenim's CC processing died in 2020 — its core feature is gone
+- Homenet is a one-man side project with broken CMS
+- Hombi's founders both left for other companies
+- None have mobile-native experiences (Hombi has a hybrid wrapper from 2015)
+- None have apparent revenue, meaning none can invest in growth
+
+---
+
+## Why 90%+ Buildings Still Use WhatsApp
+
+The failure of free tools despite 10 years of availability reveals the real barriers:
+
+### 1. WhatsApp Is Already There — Zero Adoption Cost
+80%+ of Israelis use WhatsApp daily. Every building already has a group. It handles announcements, complaints, and informal voting. Requires zero downloads, zero onboarding, zero learning.
+
+### 2. The Vaad Chair Is an Unpaid Volunteer
+They don't want to learn new software, become IT support for elderly neighbors, or convince 20-80 people to download an app. **Software adds complexity to people desperate to reduce it.**
+
+### 3. The Network Effect Problem
+For any building app to work, you need BOTH the committee AND most residents. Getting 50%+ adoption in a building with diverse ages and tech literacy is extraordinarily difficult. One resistant elderly resident breaks the system.
+
+### 4. Excel Is "Good Enough" for Small Buildings
+A 12-unit building with NIS 200/month fees is genuinely manageable with a notebook or spreadsheet. The pain point isn't acute enough for buildings under ~20 units.
+
+### 5. Professional Management Companies Are the Alternative
+Larger buildings (40+ units) increasingly hire professional management at NIS 50-120/apartment/month. These companies use enterprise tools (Build-App, DARIMPO). The free apps are squeezed between "WhatsApp is enough" and "we'll hire professionals."
+
+### The Implication for Us
+**We don't compete against apps. We compete against WhatsApp inertia.** Our solution: work THROUGH WhatsApp — send payment links, reminders, and reports INTO existing WhatsApp groups. Only the vaad chair needs the dashboard. Residents just click a link.
 
 ---
 
 ## Gaps and Opportunities
 
-### Features ALL Competitors Lack
+### Features NO Competitor Offers
 
-1. **AI-powered expense optimization**: No platform analyzes spending patterns across buildings to recommend cheaper suppliers, identify billing anomalies, or predict cost increases.
+1. **WhatsApp-native resident experience** — no app download needed for residents
+2. **AI-powered expense benchmarking** — "your building pays 40% more than average for cleaning"
+3. **Automated regulatory compliance** — half-yearly financial reports auto-generated (required by law)
+4. **Multi-language support** — Russian, Amharic, Arabic alongside Hebrew (immigrant populations)
+5. **Dispute resolution toolkit** — neighbor disputes are #1 police complaint in buildings
+6. **Vendor marketplace with group purchasing** — 1,000+ buildings = negotiating power
 
-2. **Real-time financial benchmarking**: No platform lets vaad bayit committees compare their spending per-unit against similar buildings in their area.
+### The Unoccupied Price Tier
 
-3. **Automated regulatory compliance**: Israeli vaad bayit must produce half-yearly financial reports by law. No platform auto-generates legally compliant reports and manages the annual meeting end-to-end.
-
-4. **Dispute resolution / legal toolkit**: Neighbor disputes are the #1 police complaint in buildings ([JPost](https://www.jpost.com/Real-Estate/The-vaad-squad)). No platform provides structured dispute resolution or mediation workflows.
-
-5. **Multi-language support**: New immigrants struggle with the vaad bayit system. No platform offers Russian, Amharic, Arabic, or English interfaces alongside Hebrew.
-
-6. **Building insurance and vendor marketplace**: No platform provides integrated insurance management or competitive vendor bidding with group purchasing power.
-
-7. **Smart building IoT integration**: No vaad bayit app connects to elevator systems, water meters, electricity monitors, or security cameras.
-
-### Top Complaints from App Store Reviews
-
-- **DARIMPO**: Photo upload bugs, inability to edit reports, limited photo capacity (4 per report), Android compatibility issues
-- **Hombi**: Weak engagement despite downloads — app is downloaded but not used regularly
-- **General vaad bayit pain**: Volunteer burnout, difficulty collecting from non-payers, lack of transparency, WhatsApp chaos, inability to find reliable contractors
-
-### Biggest Unmet Needs
-
-1. **The "WhatsApp replacement" opportunity**: Nearly every building uses WhatsApp groups for vaad bayit communication. This is chaotic and unstructured. A platform that replaces WhatsApp with structured channels while keeping its familiarity would have a natural wedge.
-
-2. **All-in-one for SELF-MANAGED buildings**: Most solutions target management companies. The ~60-70% of buildings self-managed by volunteer committees have no purpose-built, affordable, all-in-one solution.
-
-3. **Collection enforcement**: Non-payment is the #1 headache. A platform with integrated legal escalation, payment plans, and social pressure mechanisms would be transformative.
-
-4. **Onboarding entire buildings from zero**: Getting 100% of residents onto a platform is the core challenge. No competitor has solved viral, bottom-up adoption within a single building.
-
-### Realistic Competitive Moat Opportunities
-
-1. **Network effects within buildings**: Once 80%+ of residents are on the platform, switching costs become very high. Per-building lock-in.
-
-2. **Financial data moat**: Processing payments accumulates financial data enabling benchmarking, fraud detection, and supplier intelligence.
-
-3. **Vendor marketplace / aggregated purchasing**: 1,000+ buildings = negotiating group rates on cleaning, elevator maintenance, pest control, insurance.
-
-4. **Regulatory compliance automation**: If the government tightens reporting requirements (likely direction), being the default compliance tool creates a structural moat.
+```
+NIS 0 ......... Free dead/dying apps (Hombi, Shchenim, Homenet)
+                    |
+                    | ← NOBODY IS HERE
+                    |
+NIS 49 ........ ★ US ★ (cheapest WORKING all-in-one)
+                    |
+NIS 95-111 .... Gaviah Plus (billing only, no app, niche)
+                    |
+NIS 200 ....... Ding (per-apartment model, new)
+NIS 200-500 ... DARIMPO, Build-App (enterprise B2B)
+```
 
 ---
 
-## Customer Acquisition Channels
+## Pricing Landscape
 
-### How Existing Competitors Acquire Customers
+### Detailed Cost Comparison (for a typical 20-unit building)
 
-| Company | Primary Acquisition Channel |
-|---------|---------------------------|
-| **Bllink** | B2B sales to property management companies |
-| **Hombi** | Organic app store discovery; word-of-mouth; free pricing |
-| **DARIMPO** | Direct sales to management companies (B2B enterprise) |
-| **Gaviah Plus** | SEO (vaadbait.net ranks well for Hebrew queries); cross-sell from nonprofit product |
-| **Build-App** | B2B sales to management companies |
-| **Dayarim** | Word of mouth among vaad bayit volunteers |
-| **RunMaxi** | Bank partnerships (HaPoalim, Leumi); government backing |
+| Competitor | Subscription | Transaction Fees | Total Monthly Cost | Features |
+|-----------|-------------|-----------------|-------------------|----------|
+| **Shchenim** | NIS 0 | Unknown | Free (but dead) | Zombie — CC processing gone since 2020 |
+| **Homenet** | NIS 0 | Cut on CC | Free + fees (hobby project) | Basic, broken, no mobile |
+| **Hombi** | NIS 0 | Cut on CC | Free + fees (dying) | Most features but both founders left |
+| **★ US ★** | **NIS 49** | **1.5%** | **~NIS 109** | **Full all-in-one, WhatsApp-native, modern** |
+| **Bllink** | NIS 0 | 1.5-3% | ~NIS 80-240 | Payments only, no management |
+| **Neighbor** | — | — | Dead since 2019 | — |
+| **Gaviah Plus** | NIS 95+VAT | 1%+NIS 1/charge | ~NIS 150-170 | Billing only, web-only, niche |
+| **Ding** | NIS 10/apt | Included | **NIS 200** | Full featured, new entrant |
+| **DARIMPO** | NIS 200-500+ | Included | NIS 200-500+ | Enterprise B2B |
+| **Build-App** | NIS 200-500+ | Unknown | NIS 200-500+ | Enterprise B2B market leader |
+| **Tarbut HaDiur** | Membership | N/A | ~NIS 30-50 | Replacing its own software |
 
-### Underutilized Channels
+### Our Price Advantage
 
-1. **Municipal partnerships**: Only Neighbor tried this (Herzliya). Givatayim pilot shows municipalities actively want solutions. Could unlock thousands of buildings.
-2. **Building contractor/supplier referrals**: Plumbers, electricians, elevator companies visit every building. Completely untapped.
-3. **Real estate lawyer/accountant partnerships**: Trusted advisors who can recommend management tools.
-4. **New building developer partnerships**: Pre-install the platform before residents move in.
-5. **Social media / Facebook groups**: Numerous Israeli groups about apartment living and building management.
-6. **Tarbut HaDiur partnership**: Replace/upgrade their aging system for access to their membership.
-
-### Estimated CAC
-
-| Channel | CAC per Building | Notes |
-|---------|-----------------|-------|
-| B2B (management companies) | NIS 50-200 | Each company manages 10-100+ buildings |
-| Direct to vaad bayit | NIS 300-800 | Facebook/Google ads + demos |
-| Viral (bottom-up) | NIS 0-50 | After initial seeding |
-
-### Viral Coefficient Potential
-
-- **1 resident → entire building**: 10-60x user multiplier per activation
-- **1 vaad chair → entire building**: Chair has authority to mandate adoption
-- **1 management company → all managed buildings**: One B2B sale = 50-200 buildings
-- **Estimated K-factor: 1.5-3.0** (each acquired building → 1.5-3 additional buildings within 6 months)
+| vs. Competitor | Our Savings |
+|---------------|------------|
+| vs. Ding (NIS 200) | **75% cheaper** |
+| vs. Gaviah Plus (NIS 150-170) | **36% cheaper** |
+| vs. Bllink (NIS 80-240 commission) | **Comparable or cheaper** + full management features |
+| vs. DARIMPO/Build-App (NIS 200-500) | **75-90% cheaper** |
+| vs. Free dead apps | **Actually works and is maintained** |
 
 ---
 
-## Pricing Analysis
+## Our Positioning
 
-### Detailed Pricing Comparison
+### Why Someone Would Choose Us Over Every Alternative
 
-| Competitor | Model | Monthly Price | Processing Fee |
-|-----------|-------|---------------|----------------|
-| **Bllink** | Transaction commission | Free | 1-3% (estimated) |
-| **Hombi** | Free | NIS 0 | Cut on CC payments |
-| **DARIMPO** | Enterprise B2B | NIS 200-500+ (estimated) | Included |
-| **Gaviah Plus** | Subscription + fees | **NIS 95 + VAT** | 1% + NIS 1/bank charge |
-| **Build-App** | Enterprise B2B | Not public | Unknown |
-| **Shchenim** | Free | NIS 0 | Unknown |
-| **Homenet** | Free | NIS 0 | Cut on CC payments |
-| **Neighbor** | Transaction fee | Free | 1.5% per digital payment |
+| Alternative | Their Problem | Our Answer |
+|------------|--------------|-----------|
+| **WhatsApp + Excel** | No payment collection, no transparency, chaos | Automated payments via WhatsApp links, auto-generated financial reports |
+| **Shchenim** | CC processing dead since 2020 | Working Meshulam (CC + Bit) from day 1 |
+| **Homenet** | No mobile app, one-man hobby project | Mobile-first (Expo), actively built and supported |
+| **Hombi** | Founders left, app dying, 2015 tech | Active development, 2026 tech stack |
+| **Bllink** | Payments only, no management | Full all-in-one: payments + maintenance + communication + documents |
+| **Ding** | NIS 200/mo for 20 units (expensive) | NIS 49/mo flat — 75% cheaper |
+| **Gaviah Plus** | No mobile app, web-only, niche | Mobile-first, modern, all features |
+| **DARIMPO/Build-App** | NIS 200-500/mo, enterprise B2B | Built for volunteers, 75-90% cheaper |
 
-### What Buildings Will Pay
+### The One-Liner
 
-- Givatayim pilot: NIS 50/apartment/month for professional management
-- Professional management companies charge NIS 80-120/apartment/month
-- Software should cost significantly less: NIS 95-200/building/month
-- For a 20-unit building with NIS 4,000/month pool, NIS 95-200 is 2.5-5% — easily justifiable
+> **"הדיירים שלך ישלמו בלי שתרדוף אותם — ב-49 ש"ח בחודש"**
+> (Your residents will pay without you chasing them — for NIS 49/month)
 
-### Recommended Pricing Strategy
+### Key Differentiators
 
-| Tier | Building Size | Monthly Price | Processing Fee |
-|------|--------------|---------------|----------------|
-| **Basic** | Up to 12 units | NIS 99/month | 1.5% |
-| **Standard** | 13-40 units | NIS 179/month | 1.2% |
-| **Premium** | 41+ units | NIS 299/month | 1.0% |
-
-**Blended revenue per building** (subscription + transaction fees): ~NIS 190-270/month
-**Buildings needed for NIS 30K/month**: ~112-158 buildings
+1. **WhatsApp-native**: Residents pay via WhatsApp link. No app download needed.
+2. **Cheapest working platform**: NIS 49/mo sits in an empty price tier between dead free apps and expensive paid ones.
+3. **All-in-one**: Payments + maintenance + communication + documents (Bllink is payments-only, Gaviah Plus is billing-only).
+4. **Modern tech**: 2026 stack (Next.js, Supabase, Expo) vs. competitors' 2015 Ionic/Bootstrap/WordPress.
+5. **Actively maintained**: Both Bllink and Ding are the only other competitors with active development.
 
 ---
 
-## Executive Summary
+## Sources
 
-### Market Opportunity Rating: **MODERATE-HIGH**
-
-**Positive signals:**
-- Large TAM (3M+ apartments, 150K-250K buildings)
-- Market is highly fragmented with no clear dominant winner
-- Most competitors are small, underfunded, or narrowly focused
-- Massive pain point (volunteer burnout, non-payment, chaos)
-- Low digital penetration — most buildings still use checks, cash, and WhatsApp
-- Strong viral dynamics (1 user can bring an entire building)
-- NIS 20-40K/month is achievable with 100-250 buildings
-
-**Risk factors:**
-- Bllink has the strongest fintech position and Wix-executive backing
-- Multiple free competitors (Hombi, Shchenim, Homenet) complicate paid adoption
-- Vaad bayit committees are extremely price-sensitive
-- Transaction fee model faces resistance
-- Vaad Plus (vaadplus.com) launching soon — unknown capabilities
-
-**Key differentiation opportunities:**
-1. Build the "WhatsApp killer" for building communication
-2. AI-powered financial intelligence (benchmarking, anomaly detection)
-3. All-in-one platform that replaces Bllink + Hombi + DARIMPO in one product
-4. Municipal/developer partnerships for guaranteed distribution
-5. Multi-language support for Israel's diverse population
-6. Vendor marketplace with group purchasing power
-
-**Bottom line:** The market is real, the pain is acute, and no competitor has "won" it. The window is open but closing. A well-executed all-in-one platform can realistically reach NIS 30K/month within 12-18 months. The critical success factor is not features — it is **distribution**. Whoever cracks the viral building onboarding loop wins.
+- [BuyItInIsrael - Housing Stock](https://www.buyitinisrael.com/news/israel-housing-supply-tops-3-million-as-gaps-widen)
+- [Ronkin-List - Vaad Bayit Guide](https://ronkin-list.com/vaad-bayit-israel-guide/)
+- [Bllink - Flashpoint VC](https://www.flashpointvc.com/post/bllink-property-management-platform-closes-a-us1-2-million-seed-round-to-support-its-growth-and-expansion)
+- [Bllink - Calcalist](https://www.calcalistech.com/ctech/articles/0,7340,L-3911934,00.html)
+- [Bllink - Calcalist360](https://calcalist360.webflow.io/articles/bllink)
+- [Bllink Website](https://www.bllink.co/en/)
+- [Ding - Bar-Oz](https://www.baroz.co.il/ding-240809/)
+- [Ding Website](https://www.ding.co.il/)
+- [DARIMPO - Startup Nation Central](https://finder.startupnationcentral.org/company_page/darimpo)
+- [DARIMPO - F6S](https://www.f6s.com/darimpoltd)
+- [Build-App Website](https://www.build-app.co.il/)
+- [RunMaxi on PMC](https://pmc.im/il/he/central-district/bnei-brak/run-maxi/)
+- [Neighbor to RunMaxi Transition](https://runmaxi.co.il/from-us/from-neighbor-to-runmaxi/)
+- [Gaviah Plus Website](https://vaadbait.net/)
+- [Dayarim Website](https://www.dayarim.co.il/)
+- [Hombi - AppBrain](https://www.appbrain.com/app/hombi/com.ionicframework.vaadapp212468)
+- [Hombi - Google Play](https://play.google.com/store/apps/details?id=com.ionicframework.vaadapp212468)
+- [Hombi - App Store](https://apps.apple.com/il/app/%D7%94%D7%95%D7%9E%D7%91%D7%99-hombi/id1071129259)
+- [Homnet - Tracxn](https://tracxn.com/d/companies/homenet/__s3oEXIH_WDIkWu_qxHEQyEDDrLnFVv1rNH_n6kAgU3w)
+- [Tarbut HaDiur](https://www.tarbut-hadiur.gov.il/)
+- [Livy Website](https://www.livy.co.il/)
+- [OXS Website](https://www.oxs.co.il/)
+- [Vaad Plus - Still Not Launched](https://www.vaadplus.com/)
+- [Midrag Professional Reviews](https://www.midrag.co.il/Expanel/Question/2448)
+- [Vaad.org.il - App Comparison](https://vaad.org.il/info/615885280)
+- [Ovad Tzion (Hombi CEO) at DealHub - ZoomInfo](https://www.zoominfo.com/p/Ovad-Tzion/5397721232)
+- [Shchenim Website](https://shchenim.co.il/)
+- [Homenet Website](https://www.homenet.org.il/)
 
 ---
 
-*Research compiled March 2026. All sources cited inline with URLs. Unverified estimates are flagged where they appear.*
+*Research compiled March 2026 from web searches, app store data, company profiles, forum discussions, and Hebrew-language sources. Unverified claims are flagged throughout. All sources cited inline.*
