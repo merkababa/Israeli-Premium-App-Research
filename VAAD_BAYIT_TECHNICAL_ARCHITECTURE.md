@@ -1,6 +1,7 @@
 # Vaad Bayit Management Platform — Technical Architecture (MVP)
 
 **Date: March 2026 | Budget: NIS 130K-200K | Timeline: 6-8 weeks with 2 developers**
+**Revenue Model: Transaction-fee-first (1.5% on payments processed) — platform is free for buildings**
 
 ---
 
@@ -12,6 +13,7 @@
 - [Architecture Diagram](#architecture-diagram)
 - [Database Schema](#database-schema)
 - [Security Considerations](#security-considerations)
+- [Revenue Model & Fee Architecture](#revenue-model--fee-architecture)
 - [Cost Estimates](#cost-estimates)
 - [Monorepo Structure](#monorepo-structure)
 - [Key Risks and Mitigations](#key-risks-and-mitigations)
@@ -28,7 +30,7 @@
 | **Darimpo** | Maintenance + communication | Limited financial features |
 | **vaadbayit.co.il** | Basic vaad bayit management | Dated technology stack |
 
-**Your differentiation**: An integrated, affordable, self-service platform purpose-built for volunteer vaad bayit committees in small/medium buildings (8-40 units), combining payments + maintenance + communication + documents in a single modern interface with Hebrew-first UX.
+**Your differentiation**: A **completely free**, self-service platform purpose-built for volunteer vaad bayit committees in small/medium buildings (8-40 units), combining payments + maintenance + communication + documents in a single modern interface with Hebrew-first UX. Revenue comes from a transparent 1.5% fee on payments processed through the platform — no subscription, no monthly fees. Buildings effectively pay NIS ~108/month (vs. Ding/OXS at NIS 200/month) while the platform appears free.
 
 ---
 
@@ -46,28 +48,37 @@
 | 6 | **Document Storage** | Upload meeting minutes, financial reports, contracts, insurance docs; organized by category and date | 5 | P1 |
 | 7 | **Expense Management** | Record expenses, attach invoices/receipts, categorize, approve workflow for committee | 6 | P1 |
 | 8 | **Resident Directory** | Unit-to-resident mapping, contact info (opt-in), move-in/move-out tracking | 3 | P1 |
-| 9 | **Admin Panel & Billing** | SaaS admin: building subscription management, usage analytics, billing | 4 | P0 |
+| 9 | **Platform Revenue Dashboard** | Internal admin: track platform fee revenue per building, payment volume analytics, fee payout reports, Meshulam settlement reconciliation | 4 | P0 |
 | 10 | **Hebrew RTL & Localization** | Full RTL layout, Hebrew date formatting, shekel currency, Israeli phone validation | 3 | P0 |
 
 **Total: 60 person-days = 2 developers x 6 weeks**
 
-### Phase 2: v1.1 (Weeks 7-10) — Deferred
+### Phase 2: v1.1 (Weeks 7-12) — Revenue Expansion
 
 | Feature | Effort | Notes |
 |---------|--------|-------|
+| **Insurance referral integration** | 6 days | Partner with licensed agent; in-app quotes for bituach binyan/mashutaf. Revenue: 10-15% commission on premiums. |
+| **Payment installment plans** | 4 days | Split large one-time charges (repairs, renovations) into 3-6 credit card payments via Meshulam. Increases platform payment volume. |
 | Resident voting system (building decisions) | 6 days | Requires careful UX for quorum rules |
-| Vendor marketplace (find plumbers, electricians) | 8 days | Requires vendor onboarding — chicken-and-egg problem |
 | Debt tracking & payment plans | 4 days | Sensitive — needs legal review |
+| WhatsApp bot integration | 5 days | High engagement potential; payment links via WhatsApp |
 | Multi-building management (for professional managers) | 5 days | Opens new market segment |
-| WhatsApp bot integration | 5 days | High engagement potential |
 
-### Phase 3: v2.0 — Future
+### Phase 3: v2.0 (Months 6-12) — Marketplace & Scale
 
-- AI expense categorization (from receipt photos)
+| Feature | Effort | Notes |
+|---------|--------|-------|
+| **Service provider marketplace** | 10 days | Plumbers, electricians, cleaners pay NIS 100-200/mo for listing + leads. Requires 150+ buildings for viable density. |
+| **Premium tier for property managers** | 5 days | NIS 99-199/mo for multi-building dashboard, advanced analytics, API. Additive revenue, not core model. |
+| AI expense categorization (from receipt photos) | 5 days | |
+| Integration with Israeli municipal systems | 8 days | |
+
+### Phase 4: v3.0 — Future
+
 - Predictive maintenance alerts
-- Building insurance comparison tool
-- Integration with Israeli municipal systems
+- Building insurance comparison marketplace
 - Elevator/generator maintenance scheduling with IoT
+- Solar panel group-buy coordination
 
 ---
 
@@ -127,6 +138,8 @@ This is sufficient for 300 buildings x ~25 residents = ~7,500 users.
 **Bit limits**: [NIS 5,000/transaction and NIS 20,000/month](https://developer.bitpay.co.il/docs). For typical vaad bayit fees (NIS 100-300/unit), adequate per resident. Credit card remains primary; Bit is convenience.
 
 **PCI compliance**: Meshulam handles all PCI DSS via hosted payment page / tokenization. Your platform never touches raw card numbers (SAQ-A level).
+
+**Platform fee architecture**: Meshulam processes the full payment amount. The 1.5% platform fee is calculated and tracked internally. The building receives the full amount from Meshulam; the platform invoices the building for the accumulated fee monthly (or deducts from a settlement account). See [Revenue Model & Fee Architecture](#revenue-model--fee-architecture) for details.
 
 ### Authentication: Supabase Auth
 
@@ -208,14 +221,14 @@ This is sufficient for 300 buildings x ~25 residents = ~7,500 users.
 │  │  (Deno runtime — serverless)                                  │    │
 │  │                                                               │    │
 │  │  ┌─────────────┐ ┌──────────────┐ ┌───────────────────────┐  │    │
-│  │  │  Payment    │ │ Notification │ │  Report Generation    │  │    │
-│  │  │  Webhooks   │ │   Sender     │ │  (Monthly PDF)        │  │    │
+│  │  │  Payment    │ │ Notification │ │  Revenue & Reports    │  │    │
+│  │  │  Webhooks   │ │   Sender     │ │                       │  │    │
 │  │  │             │ │              │ │                       │  │    │
-│  │  │ - Meshulam  │ │ - Expo Push  │ │ - Financial summaries │  │    │
-│  │  │   callback  │ │ - Resend     │ │ - Payment status      │  │    │
-│  │  │ - Update    │ │   email      │ │ - Transparency report │  │    │
-│  │  │   payment   │ │ - SMS via    │ │                       │  │    │
-│  │  │   status    │ │   provider   │ │                       │  │    │
+│  │  │ - Meshulam  │ │ - Expo Push  │ │ - Platform fee calc   │  │    │
+│  │  │   callback  │ │ - Resend     │ │ - Monthly invoicing   │  │    │
+│  │  │ - Update    │ │   email      │ │ - Financial summaries │  │    │
+│  │  │   payment   │ │ - WhatsApp   │ │ - Transparency report │  │    │
+│  │  │   status    │ │   pay links  │ │ - Revenue dashboard   │  │    │
 │  │  └─────────────┘ └──────────────┘ └───────────────────────┘  │    │
 │  └───────────────────────────────────────────────────────────────┘    │
 │                                                                       │
@@ -237,10 +250,10 @@ This is sufficient for 300 buildings x ~25 residents = ~7,500 users.
 └───────────────────────┘
 ```
 
-### Payment Flow
+### Payment Flow (with Platform Fee Tracking)
 
 ```
-Resident opens payment page
+Resident opens payment page (via app, WhatsApp link, or web)
          │
          ▼
 ┌─────────────────────┐
@@ -274,12 +287,32 @@ Resident opens payment page
 └──────────┬──────────┘     └─────────────────────┘
            │
            ▼
-┌─────────────────────┐
-│ Update payments      │
-│ table → Generate     │
-│ receipt → Send push  │
-│ notif + email        │
-└─────────────────────┘
+┌──────────────────────────────────────────┐
+│ 1. Update payments table (status=done)   │
+│ 2. Calculate platform fee:               │
+│    fee = amount × building.fee_pct/100   │
+│ 3. INSERT into platform_fees             │
+│    (status='accrued')                    │
+│ 4. Generate receipt for resident         │
+│ 5. Send push notif + email              │
+└──────────────────────────────────────────┘
+```
+
+### Monthly Fee Collection Flow (Cron — 1st of each month)
+
+```
+Cron: "generate-monthly-invoice" runs on 1st of month
+         │
+         ▼
+┌──────────────────────────────────────┐
+│ For each building with accrued fees: │
+│  1. SUM(platform_fees) for month     │
+│  2. CREATE platform_invoice          │
+│  3. Mark fees as 'invoiced'          │
+│  4. Send invoice to treasurer email  │
+│  5. (Optional: auto-charge if card   │
+│     on file for platform fees)       │
+└──────────────────────────────────────┘
 ```
 
 ### Notification Flow
@@ -317,9 +350,9 @@ CREATE TABLE buildings (
     monthly_fee     NUMERIC(10,2) NOT NULL,           -- Default monthly fee in NIS
     bank_account    JSONB,                            -- {bank, branch, account}
     settings        JSONB DEFAULT '{}',
-    subscription_plan TEXT DEFAULT 'trial',
-    subscription_status TEXT DEFAULT 'active',
-    trial_ends_at   TIMESTAMPTZ,
+    platform_fee_pct NUMERIC(4,2) DEFAULT 1.50,      -- Platform fee % (default 1.5%)
+    onboarding_status TEXT DEFAULT 'active'
+                    CHECK (onboarding_status IN ('pending', 'active', 'suspended')),
     created_at      TIMESTAMPTZ DEFAULT now(),
     updated_at      TIMESTAMPTZ DEFAULT now()
 );
@@ -510,20 +543,55 @@ CREATE TABLE documents (
 );
 
 -- =============================================================
--- SaaS ADMIN
+-- PLATFORM REVENUE TRACKING
 -- =============================================================
 
-CREATE TABLE building_subscriptions (
+-- Tracks the platform's 1.5% fee on each payment processed
+CREATE TABLE platform_fees (
     id              UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     building_id     UUID NOT NULL REFERENCES buildings(id),
-    plan            TEXT NOT NULL CHECK (plan IN ('trial', 'basic', 'premium')),
-    price_monthly   NUMERIC(10,2) NOT NULL,
-    started_at      TIMESTAMPTZ DEFAULT now(),
-    current_period_start TIMESTAMPTZ,
-    current_period_end   TIMESTAMPTZ,
-    status          TEXT DEFAULT 'active'
-                    CHECK (status IN ('active', 'past_due', 'cancelled', 'trial')),
-    meshulam_subscription_id TEXT,
+    payment_id      UUID NOT NULL REFERENCES payments(id),
+    payment_amount  NUMERIC(10,2) NOT NULL,           -- Original payment amount
+    fee_pct         NUMERIC(4,2) NOT NULL,             -- Fee % at time of payment (e.g., 1.50)
+    fee_amount      NUMERIC(10,2) NOT NULL,            -- Calculated fee in NIS
+    status          TEXT DEFAULT 'accrued'
+                    CHECK (status IN ('accrued', 'invoiced', 'collected', 'waived')),
+    invoice_id      UUID REFERENCES platform_invoices(id),
+    created_at      TIMESTAMPTZ DEFAULT now()
+);
+
+-- Monthly invoice to building for accumulated platform fees
+CREATE TABLE platform_invoices (
+    id              UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    building_id     UUID NOT NULL REFERENCES buildings(id),
+    period_month    INTEGER NOT NULL CHECK (period_month BETWEEN 1 AND 12),
+    period_year     INTEGER NOT NULL,
+    total_payment_volume NUMERIC(12,2) NOT NULL,       -- Total payments processed that month
+    fee_pct         NUMERIC(4,2) NOT NULL,             -- Fee % applied
+    total_fee       NUMERIC(10,2) NOT NULL,            -- Total fee owed
+    status          TEXT DEFAULT 'draft'
+                    CHECK (status IN ('draft', 'sent', 'paid', 'overdue', 'waived')),
+    issued_at       TIMESTAMPTZ,
+    paid_at         TIMESTAMPTZ,
+    created_at      TIMESTAMPTZ DEFAULT now(),
+    updated_at      TIMESTAMPTZ DEFAULT now(),
+    UNIQUE(building_id, period_month, period_year)
+);
+
+-- Phase 2: Insurance referral tracking
+CREATE TABLE insurance_referrals (
+    id              UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    building_id     UUID NOT NULL REFERENCES buildings(id),
+    partner_name    TEXT NOT NULL,                      -- Insurance agent/agency name
+    policy_type     TEXT NOT NULL
+                    CHECK (policy_type IN ('building', 'shared_areas', 'liability', 'earthquake')),
+    annual_premium  NUMERIC(10,2),
+    commission_pct  NUMERIC(4,2),                      -- Our referral commission %
+    commission_amount NUMERIC(10,2),
+    policy_start    DATE,
+    policy_end      DATE,
+    status          TEXT DEFAULT 'referred'
+                    CHECK (status IN ('referred', 'quoted', 'sold', 'renewed', 'cancelled')),
     created_at      TIMESTAMPTZ DEFAULT now(),
     updated_at      TIMESTAMPTZ DEFAULT now()
 );
@@ -543,6 +611,8 @@ ALTER TABLE maintenance_photos ENABLE ROW LEVEL SECURITY;
 ALTER TABLE announcements ENABLE ROW LEVEL SECURITY;
 ALTER TABLE announcement_reads ENABLE ROW LEVEL SECURITY;
 ALTER TABLE documents ENABLE ROW LEVEL SECURITY;
+-- Platform revenue tables: NO RLS — accessed only by service_role (admin)
+-- platform_fees, platform_invoices, insurance_referrals are internal-only
 
 -- Residents can only see their own building's data
 CREATE POLICY "residents_see_own_building" ON residents
@@ -600,6 +670,14 @@ CREATE INDEX idx_maintenance_status ON maintenance_requests(building_id, status)
 CREATE INDEX idx_announcements_building ON announcements(building_id);
 CREATE INDEX idx_documents_building ON documents(building_id);
 CREATE INDEX idx_standing_orders_next ON standing_orders(next_charge_at) WHERE is_active = true;
+
+-- Platform revenue indexes
+CREATE INDEX idx_platform_fees_building ON platform_fees(building_id);
+CREATE INDEX idx_platform_fees_status ON platform_fees(status);
+CREATE INDEX idx_platform_invoices_building ON platform_invoices(building_id);
+CREATE INDEX idx_platform_invoices_status ON platform_invoices(status);
+CREATE INDEX idx_platform_invoices_period ON platform_invoices(period_year, period_month);
+CREATE INDEX idx_insurance_referrals_building ON insurance_referrals(building_id);
 ```
 
 ### Role-Permission Matrix
@@ -617,6 +695,7 @@ CREATE INDEX idx_standing_orders_next ON standing_orders(next_charge_at) WHERE i
 | Manage residents/units | No | No | No | Yes |
 | Change building settings | No | No | No | Yes |
 | View financial reports | Summary | Full | Full | Full |
+| View platform fee invoices | No | No | Yes | Yes |
 
 ---
 
@@ -673,6 +752,72 @@ Sessions:
 
 ---
 
+## Revenue Model & Fee Architecture
+
+### Core Model: 1.5% Transaction Fee ("Platform is Free")
+
+The platform charges **zero subscription fees**. Revenue comes from a transparent 1.5% fee on payments processed through the platform. This fee is borne by the building fund (not individual residents).
+
+**Why this works:**
+- **Zero adoption barrier**: "It's completely free" eliminates the #1 objection
+- **Scales with value delivered**: larger buildings pay more, smaller buildings pay less
+- **Undercuts all competitors**: effective cost of ~NIS 108/mo vs Ding/OXS at NIS 200/mo
+- **No churn from cancellation**: there's nothing to cancel — buildings just use or don't use
+
+### Fee Calculation Example
+
+```
+Building: 24 apartments × NIS 300/month = NIS 7,200 monthly collection
+Platform fee: NIS 7,200 × 1.5% = NIS 108/month
+Meshulam processing: NIS 7,200 × 1.5% + 24 × NIS 1 = NIS 132/month (paid to Meshulam)
+
+Building's total cost: NIS 108 (platform) + NIS 132 (Meshulam) = NIS 240/month
+  → Still cheaper than Ding/OXS at NIS 200/month + their own processing fees
+  → Platform appears FREE to the building — processing fees are the only visible cost
+```
+
+### Fee Collection Mechanism
+
+Two options (configurable per building):
+
+1. **Monthly invoice** (default): Platform fees accrue throughout the month. On the 1st, an invoice is generated and sent to the treasurer. Payment due within 14 days.
+2. **Auto-deduct** (opt-in): Building provides a credit card for platform fees. Charged automatically monthly. Requires separate Meshulam token for platform fee collection.
+
+### Revenue Projections (Transaction Fee Only — Phase 1)
+
+| Scale | Monthly Payment Volume | Platform Fee (1.5%) | Meshulam Cost | Net Revenue |
+|-------|----------------------|--------------------|--------------|-|
+| 50 buildings | NIS 360,000 | NIS 5,400 | ~NIS 6,600 | NIS 5,400 |
+| 150 buildings | NIS 1,080,000 | NIS 16,200 | ~NIS 19,800 | NIS 16,200 |
+| 300 buildings | NIS 2,160,000 | NIS 32,400 | ~NIS 39,600 | NIS 32,400 |
+
+*Note: Meshulam costs are paid by the building as payment processing fees, not by the platform. Platform net revenue = platform fee only.*
+
+### Phase 2-3 Revenue Stacking
+
+| Revenue Stream | When | Est. Revenue at 300 Buildings |
+|---|---|---|
+| Transaction fee (1.5%) | Phase 1 (launch) | NIS 32,400/mo |
+| Insurance referral commissions | Phase 2 (month 6+) | NIS 12,500-18,750/mo |
+| Service provider marketplace | Phase 3 (month 12+) | NIS 10,000-20,000/mo |
+| Premium tier (property managers) | Phase 3 (month 12+) | NIS 5,000-10,000/mo |
+| **Combined** | **Month 18** | **NIS 60,000-80,000/mo** |
+
+### Payment Bypass Mitigation
+
+The biggest risk: residents pay via bank standing orders (horaot keva) instead of through the platform, generating zero revenue. Mitigation strategies built into the product:
+
+| Strategy | Implementation | Impact |
+|----------|---------------|--------|
+| **One-tap payment** | Bit / Apple Pay / Google Pay via Meshulam | Easier than setting up horaot keva |
+| **Auto-generated receipts** | Only platform payments get instant digital receipts | Vaad committees need receipts for accounting |
+| **Payment tracking dashboard** | Real-time "who paid / who didn't" — only for platform payments | Treasure's #1 pain point solved |
+| **Installment plans** | Split large charges into 3-6 credit card payments | Impossible with bank transfer |
+| **Automatic late reminders** | WhatsApp + push + email reminders for unpaid residents | Only works for platform-tracked payments |
+| **WhatsApp payment links** | Treasurer sends "pay now" link in building WhatsApp group | Tap → pay in 30 seconds |
+
+---
+
 ## Cost Estimates
 
 ### Monthly Infrastructure Costs
@@ -689,14 +834,16 @@ Sessions:
 | **Monitoring (Sentry)** | $0 | $26 | $26 | $80 |
 | **TOTAL** | **~$85/mo** | **~$166/mo** | **~$206/mo** | **~$680/mo** |
 
-### Revenue vs Cost
+### Revenue vs Cost (Transaction Fee Model)
 
-| Scale | Monthly Revenue (NIS) | Monthly Infra (NIS) | Gross Margin |
-|-------|----------------------|---------------------|--------------|
-| 50 buildings | ~5,000 | ~310 | 94% |
-| 170 buildings | ~20,400 | ~600 | 97% |
-| 300 buildings | ~39,000 | ~750 | 98% |
-| 1,000 buildings | ~130,000 | ~2,500 | 98% |
+| Scale | Tx Fee Revenue (NIS) | Insurance Rev (Phase 2) | Total Revenue | Monthly Infra (NIS) | Gross Margin |
+|-------|---------------------|------------------------|--------------|---------------------|--------------|
+| 50 buildings | 5,400 | — | 5,400 | ~310 | 94% |
+| 150 buildings | 16,200 | — | 16,200 | ~600 | 96% |
+| 300 buildings | 32,400 | 15,625 | 48,025 | ~750 | 98% |
+| 1,000 buildings | 108,000 | 52,000 | 160,000 | ~2,500 | 98% |
+
+*Revenue assumes 1.5% platform fee on average building collecting NIS 7,200/month. Insurance referral at 12.5% of NIS 5,000/year avg premium.*
 
 ### MVP Development Budget
 
@@ -723,7 +870,8 @@ vaad-bayit/
 │   │   │   ├── dashboard/
 │   │   │   ├── payments/
 │   │   │   ├── maintenance/
-│   │   │   └── admin/
+│   │   │   ├── admin/                # Internal: platform revenue, fee tracking
+│   │   │   └── invoices/             # Building's platform fee invoices
 │   │   ├── components/
 │   │   └── next.config.ts
 │   │
@@ -751,11 +899,13 @@ vaad-bayit/
 ├── supabase/
 │   ├── migrations/                   # SQL migrations
 │   ├── functions/                    # Edge Functions (Deno)
-│   │   ├── create-payment/
-│   │   ├── payment-webhook/
-│   │   ├── send-notification/
+│   │   ├── create-payment/           # Generate Meshulam payment URL
+│   │   ├── payment-webhook/          # Handle Meshulam callback + calculate platform fee
+│   │   ├── send-notification/        # Push + email + WhatsApp payment links
 │   │   ├── charge-standing-orders/   # Cron: daily
-│   │   └── generate-monthly-report/  # Cron: monthly
+│   │   ├── generate-monthly-invoice/ # Cron: 1st of month — invoice buildings for platform fees
+│   │   ├── generate-monthly-report/  # Cron: monthly — financial transparency reports
+│   │   └── platform-admin/           # Internal: revenue dashboard, fee overrides, building health
 │   ├── seed.sql                      # Development seed data
 │   └── config.toml
 │
@@ -770,12 +920,15 @@ vaad-bayit/
 
 | Risk | Impact | Likelihood | Mitigation |
 |------|--------|-----------|------------|
+| **Payment bypass (horaot keva)** | **High** | **High** | Make in-app payment easier: one-tap Bit/card, auto-receipts, installments, WhatsApp pay links. See [Payment Bypass Mitigation](#payment-bypass-mitigation). |
+| **Low payment adoption in early buildings** | **High** | **Medium** | Onboard buildings where treasurer is tech-forward. Offer white-glove setup. Target buildings already frustrated with cash/check collection. |
 | Meshulam API limitations for recurring billing | High | Medium | Abstract payment provider behind interface. Cardcom as fallback. |
+| **Platform fee collection from buildings** | **Medium** | **Medium** | Auto-deduct option with card on file. Monthly invoices with 14-day terms. Fee waiver for first month as onboarding incentive. |
 | Bit transaction limits (NIS 20K/month) | Medium | Low | Bit is convenience only; credit card primary. |
 | Supabase Edge Function cold starts | Low | Medium | Scheduled pings to keep warm. Payment webhooks aren't latency-sensitive. |
 | Hebrew RTL bugs in third-party components | Medium | High | Budget 3 days for RTL testing. Use CSS logical properties. |
 | Israeli Privacy Law compliance | High | Low | Data export/deletion from day 1. Register with PPA before launch. |
-| Bllink first-mover advantage in payments | Medium | Medium | Differentiate on integrated experience (payments + maintenance + communication). |
+| Bllink first-mover advantage in payments | Medium | Medium | Differentiate on integrated experience (payments + maintenance + communication). We're free; they take a hidden commission. |
 
 ---
 
@@ -786,7 +939,7 @@ vaad-bayit/
 | Frontend (Web) | Next.js 15 on Vercel | $20 |
 | Frontend (Mobile) | Expo / React Native | $0 |
 | Backend + DB + Auth + Storage | Supabase Pro (PostgreSQL) | $25-50 |
-| Payments | Meshulam (credit cards + Bit) | Per-transaction only |
+| Payments | Meshulam (credit cards + Bit) | Per-transaction (paid by buildings) |
 | Push Notifications | Expo Push + Supabase Realtime | $0 |
 | Email | Resend | $20 |
 | SMS (Auth OTP) | Local Israeli provider or Twilio | ~$90 |
@@ -795,15 +948,26 @@ vaad-bayit/
 | Monitoring | Sentry | $26 |
 | **Total Infrastructure** | | **~$206/month** |
 
+| Revenue Model | Source | Est. Monthly (300 buildings) |
+|---|---|---|
+| **Platform transaction fee (1.5%)** | Payments processed through app | NIS 32,400 |
+| Insurance referral commissions | Partner with licensed agent (Phase 2) | NIS 12,500-18,750 |
+| Service provider marketplace | Provider listings + leads (Phase 3) | NIS 10,000-20,000 |
+| **Combined at scale** | | **NIS 55,000-71,000** |
+
 ---
 
-*Architecture designed March 2026. All pricing and technology verified via web searches with cited sources.*
+*Architecture designed March 2026. Updated March 2026 to transaction-fee-first revenue model. All pricing and technology verified via web searches with cited sources.*
 
 **Sources:**
 - [Supabase Pricing](https://supabase.com/pricing) | [Supabase RLS Docs](https://supabase.com/docs/guides/database/postgres/row-level-security) | [Supabase Realtime](https://supabase.com/docs/guides/realtime)
 - [Expo Monorepo Guide](https://docs.expo.dev/guides/monorepos/) | [Expo Push Notifications](https://docs.expo.dev/push-notifications/overview/) | [Expo + Supabase](https://docs.expo.dev/guides/using-supabase/)
-- [Meshulam / Grow Payments](https://apps.duda.co/apps/grow-payments) | [Meshulam API](https://doc.meshulam.co.il/)
+- [Meshulam / Grow Payments](https://apps.duda.co/apps/grow-payments) | [Meshulam API](https://doc.meshulam.co.il/) | [Grow Pricing](https://grow.business/pay-as-you-grow/)
 - [Bit Developer Portal](https://developer.bitpay.co.il/docs) | [Cardcom API](https://www.npmjs.com/package/@tsdiapi/cardcom)
 - [Israel Privacy Law Amendment 13](https://iapp.org/news/a/israel-marks-a-new-era-in-privacy-law-amendment-13-ushers-in-sweeping-reform)
 - [PCI DSS 2026](https://paymentnerds.com/blog/pci-dss-updates-how-to-be-pci-dss-compliant-in-2026/)
 - [Cloudflare R2 vs S3](https://www.cloudflare.com/pg-cloudflare-r2-vs-aws-s3/)
+- [Bllink Revenue Model](https://www.flashpointvc.com/post/bllink-property-management-platform-closes-a-us1-2-million-seed-round-to-support-its-growth-and-expansion)
+- [PayHOA Payment Fees](https://intercom.help/payhoa/en/articles/8663819-payment-fees) | [Buildium Transaction Fees](https://www.buildium.com/blog/buildium-vs-appfolio/)
+- [SaaS Freemium Conversion Benchmarks](https://firstpagesage.com/seo-blog/saas-freemium-conversion-rates/)
+- [Bank of Israel Interchange Reduction](https://www.boi.org.il/en/communication-and-publications/press-releases/the-interchange-fee-will-be-reduced-by-approximately-30-percent-from-07-percent-to-05-percent-in-three-stages/)
