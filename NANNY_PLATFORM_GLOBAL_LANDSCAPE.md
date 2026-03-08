@@ -59,9 +59,10 @@ Sources:
 **Overview:** Founded 2011, San Francisco. Mobile-first babysitter/nanny booking.
 
 **Key Metrics:**
-- **Total funding: $22.75M** (Series B: $15M in 2014, led by DBL Investors)
+- **Total funding: $49.52M** (includes Series C: $17M in 2017 and additional rounds beyond the $15M Series B in 2014)
 - **20-30% month-over-month growth** in bookings during 2012-2013
 - Investors include Match Group, Canaan Partners, First Round Capital, Menlo Ventures
+- **Kinside acquisition (May 2025):** UrbanSitter acquired Kinside, a corporate childcare benefits platform, expanding its B2B employer-subsidized care offering
 
 **What Makes Them Different — The Social Trust Graph:**
 - **Facebook Connect integration** — parents see babysitters hired and reviewed by their actual Facebook friends
